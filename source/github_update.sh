@@ -53,7 +53,6 @@ function githubUpdate(){
 function getVersion(){
 	cd $basePath"/Tangram-base/release"
 	tangramVersion=$(grep "\{version:\"[0-9\.]*\"\}" all_release.js -o|grep -o "[0-9\.]*")
-	cd -
 }
 
 function createMD5(){
@@ -71,24 +70,31 @@ function copyFiles(){
 	#复制碎片文件
 	cd $copyFilePath
 	[ -d "${fragmentFolder}" ] && rm -rf $fragmentFolder
-	cp -rf $basePath $fragmentFolder 
+	#复制碎片文件
+	cp -rf $basePath $fragmentFolder
+	#遍历删除碎片文件中没有用的目录和文件
+	cd $copyFilePath"/"$fragmentFolder
+	for loop in `ls $dir`; do
+		rm -rf $loop"/LICENSE" $loop"/README" $loop"/release" $loop"/test" $loop"/.git"
+	done
 	#复制大文件
 	getVersion
+	cd $copyFilePath
 	[ -d "${downloadFolder}" ] && rm -rf $downloadFolder
 	mkdir $downloadFolder
-	cp $basePath"/Tangram-base/release/all_release.js" $downloadFolder"/tangram-"$tangramVersion".js"
-	cp $basePath"/Tangram-base/release/all_release_src.js" $downloadFolder"/tangram-"$tangramVersion".source.js"
-	cp $basePath"/Tangram-base/release/core_release_src.js" $downloadFolder"/tangram-"$tangramVersion".core.source.js"
-	cp $basePath"/Tangram-base/release/core_release.js" $downloadFolder"/tangram-"$tangramVersion".core.js"
-	cp $basePath"/Tangram-base/release/tangram_all.js" $downloadFolder"/tangram-all.js"
-	cp $basePath"/Tangram-base/release/all_release.js" $downloadFolder"/tangram.js"
-	cd -
+	cd $copyFilePath"/"$downloadFolder
+	cp $basePath"/Tangram-base/release/all_release.js" "tangram-"$tangramVersion".js"
+	cp $basePath"/Tangram-base/release/all_release_src.js" "tangram-"$tangramVersion".source.js"
+	cp $basePath"/Tangram-base/release/core_release_src.js" "tangram-"$tangramVersion".core.source.js"
+	cp $basePath"/Tangram-base/release/core_release.js" "tangram-"$tangramVersion".core.js"
+	cp $basePath"/Tangram-base/release/tangram_all.js" "tangram-all.js"
+	cp $basePath"/Tangram-base/release/all_release.js" "tangram.js"
+	zip -r "tangram-"$tangramVersion".zip" "tangram-"$tangramVersion".js" "tangram-"$tangramVersion".source.js" "../fragment/Tangram-base" "../fragment/Tangram-component"
 }
 
 [ ! -n "$1" ] && githubUpdate
 cd $basePath"/Tangram-base/release"
 ant -f build_release.xml  release-all > /dev/null
-cd -
 copyFiles
 createMD5
 echo "----------All done----------"
