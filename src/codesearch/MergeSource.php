@@ -73,26 +73,21 @@ class MergeSource {
 			
 
             
-        	#	如果文件不存在 并且 开启了 base 选项，则从附属库中去查找
-            if ( !file_exists($realpath) && $this->nobase ) {
-					$realpath = $this->filePathJoin(MY_DIR, $_REQUEST['slavelib'].'/src', $module);
+        	#	如果文件不存在 并且 允许了 Base 选项，则从附属库中去查找
+            if ( !file_exists($realpath) && !$this->nobase ) {
+					//$realpath = $this->filePathJoin(MY_DIR, $_REQUEST['slavelib'].'/src', $module);
+					$realpath = $this->filePathJoin(MY_DIR, 'Tangram-base'.'/src', $module);
 			}
 			#	还是找不到文件的话就 返回错误信息；
 			 if ( !file_exists($realpath)) {
-					return "//NOT found $module \n";
+					//return "//NOT found $module \n";
+					return "//NOT found $realpath \n";
 			}
-            
-            
-            
-            
-            
-            
-            
-            
             
             return $this->mergeFile($realpath);            
         }
     }
+	//	向上级查找功能，未开启
     public function indexUpLevelFile($path){
 		
 		$patharr = explode ('/',$path);
