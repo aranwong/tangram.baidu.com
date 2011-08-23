@@ -1,4 +1,6 @@
 {include ../header.inc}
+		<script src="../js/download/tangram.js" charset="utf-8"></script>
+		<script src="../js/CodeStyle.js" charset="utf-8"></script>
 		<script type="text/javascript">
 			var pageConfig = { name: "docs", prepath: "docs/" };
 		</script>
@@ -14,14 +16,14 @@
                 在我们开始一切工作之前，要有页面；你可以创建一个新的html，也可以在你已有的页面里面加上一句引入tangram的标签：
                 </p>
                 <p>
-               <pre><code>&lt;script src="http://img.baidu.com/js/tangram-1.3.5.js"&gt;&lt;/script&gt; ; </code></pre>
+               <div style="background:#DDD;padding:5px"><code class="CodeStyle">&lt;script src="http://img.baidu.com/js/tangram-1.3.5.js"&gt;&lt;/script&gt; ; </code></div>
                 </p>
                 <p>
                 Tangram框架可以和任何已有的框架集成在一起，Tangram是友好的，不用担心它们发生冲突，让你已有的功能失效。<br>
                 现在，假设你已经建立了下面这样的一个页面：
 
                 </p>
-               <pre><code>&lt;!doctype html&gt;
+               <div style="background:#DDD;padding:5px"><code class="CodeStyle">&lt;!doctype html&gt;
 &lt;html&gt;
     &lt;head&gt;
     &lt;script  src="http://img.baidu.com/js/tangram-1.3.5.js"&gt;&lt;/script&gt;
@@ -33,7 +35,7 @@
 	    &lt;/div&gt;
 	  &lt;/div&gt;
 	  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;</code></div>
 
                 <h2>获取一个dom节点</h2>
                 <p>
@@ -49,61 +51,56 @@
 
                 <h2>节点样式设置</h2>
                 <p>设置节点的样式也是我们经常做的操作，tangram也提供了支持；如果我们想把id为 byG的节点设置多种样式，那么我们可以直接使用：<br>
-               <pre> <code>
-                T.dom.setStyles("byG",{
-                <br>
-                    position:"absolute",<br>
-                    top:50,<br>
-                    left:100,<br>
-                    opacity:.5<br>
-                });<br>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.dom.setStyles("byG",{
+	position:"absolute",<br>
+	top:50,<br>
+	left:100,<br>
+	opacity:.5<br>
+});<br>
 
-                </code></pre>
+                </code></div>
                 <br>px值、透明度的设置，直接使用数字就可以了，tangram会帮你处理好浏览器的差异。</p>
                 <h2>节点class名增删</h2>
                 <p>除了直接设置节点样式，我们还可以通过添加class的方法来让节点一次性更改多种样式。这会让我们的代码更加精简，同时也会提高性能。<br>
                 我们在页面上添加一个样式<br>
-               <pre> <code>&lt;style&gt; .blue{
-                color:blue
-                } &lt;/style&gt;</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">&lt;style&gt; 
+	.blue{
+		color:blue
+	}
+&lt;/style&gt;</code></div>
                 <br>然后我们调用<br>
-               <pre> <code>T.dom.addClass("byG","blue");</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.dom.addClass("byG","blue");</code></div>
 
                 <br>怎么样？ 有点难看？ 那好吧：<br>
-               <pre> <code>T.dom.removeClass("byG","blue");</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.dom.removeClass("byG","blue");</code></div>
                 </p>
                 <h2>绑定事件</h2>
                 <p>万事俱备，只欠东风！ 现在开始，我们就让页面动起来吧。<br>
-               <pre> <code>T.event.on("byG", "click",function(event){
-                alert(this.innerHTML);});</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.event.on("byG", "click",function(event){ alert(this.innerHTML);});</code></div>
                 <br>除了标准的事件，tangram还支持一些特殊的事件，比如IE的mouseenter：<br>
-               <pre> <code>T.event.on("byG", "mouseenter",function(){
-                alert("在我地盘这你就得听我的");});</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.event.on("byG","mouseenter",function(){alert("在我地盘这你就得听我的");});</code></div>
                 </p>
                 <h2>插入HTML</h2>
 
                 <p>除了对已有节点的操作，我们也经常需要插入新的节点到DOM树里；方式有两种，一种是插入HTML字符串，另外就是创建DOM节点。 这里先说第一种，<br>
                 现在有这样一段文本：<br>
-               <pre> <code>
-                var htmlString = "&lt;strong&gt;我是插班生&lt;/strong&gt;";
-                </code></pre><br>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">var htmlString = "&lt;strong&gt;我是插班生&lt;/strong&gt;";</code></div><br>
                 我们把它插入id为byG的节点内部末尾，类似appendChild，那么我们可以这样：<br>
-               <pre> <code>T.dom.insertHTML("byG", "beforeEnd", htmlString);</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.dom.insertHTML("byG", "beforeEnd", htmlString);</code></div>
                 <br>那么如果想插入到内部开头呢？ 将"beforeEnd"替换成"afterBegin"； 插在外部前面？换成"beforeBegin"； 外部后面？ "afterEnd"； 如果你熟悉IE的insertAdjacentHTML，那么这就是这个方法的浏览器兼容版。
                 </p>
 
                 <h2>创建DOM节点并插入</h2>
                 <p>再说第二种方式，创建dom节点。同样，浏览T.dom包下的方法，你能大致猜出来实现这个功能的就是那个 T.dom.create。 <br>
-               <pre> <code>var iframe = T.dom.create("IFRAME",{
-                <br>
-                    id:"newDIV",<br>
-                    "class":"myClass",<br>
-                    frameborder:"none",<br>
-                    src:"http://www.baidu.com"<br>
-                });</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">var iframe = T.dom.create("IFRAME",{
+	id:"newDIV",<br>
+	"class":"myClass",<br>
+	frameborder:"none",<br>
+	src:"http://www.baidu.com"<br>
+});</code></div>
 
                 <br>如此，再使用<br>
-               <pre> <code>T.dom.insertAfter(iframe,"byG");</code></pre>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.dom.insertAfter(iframe,"byG");</code></div>
                 <br>就可以将它插入到页面中了。 <br>
                 当然，也可以选择T.dom.insertBefore，如果不清楚差别，请参考各自文档。
                 </p>
@@ -111,11 +108,10 @@
                 <h2>Ajax请求</h2>
                 <p>
                 到此为止，对于如何渲染当前页面，我们已经有了大概的了解。 接下来我们了解一下如何进行AJAX请求。<br>
-               <pre> <code>T.ajax.get("http://yourDomain.com/yourAjaxUrl",function(response){
-                <br>
-                    alert("成功获取如下文本: " + response);<br>
+               <div style="background:#DDD;padding:5px"> <code class="CodeStyle">T.ajax.get("http://yourDomain.com/yourAjaxUrl",function(response){
+	alert("成功获取如下文本: " + response);<br>
 
-                });</code></pre>
+});</code></div>
                 <br>如果是post请求，那么在上面搜索框中搜索post， T.ajax.post就是你要的方法。 如果需要复杂的处理，比如设置header，添加错误响应，甚至添加安全认证，那么可以直接使用 T.ajax.request，具体使用方法请参考文档页面描述。<br>
                     到此，你已经基本了解了tangram在DOM节点操作上的主要的方法，也可以使用进行一些页面的辅助编程了。下面，我们来了解一些更高级的应用，看看tangram还能做些什么。<br></p>
                 <h2>下一步:</h2>
