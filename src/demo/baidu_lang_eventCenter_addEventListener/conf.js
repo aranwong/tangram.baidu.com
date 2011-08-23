@@ -1,10 +1,10 @@
 var conf = {
     clazz: {
         type: 'method',
-        'method': 'baidu.lang.dispatchEvent'
+        'method': 'baidu_lang_eventCenter_addEventListener'
     },
     
-    demoType: [{key: 'default', val: 'dispatchEvent'}],
+    demoType: [{key: 'default', val: 'addEventListener'}],
     'default': {
         pageConf: {
             html: '<div id="resultArea"><h2 id="element">点击这里</h2></div>'
