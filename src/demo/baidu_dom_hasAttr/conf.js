@@ -12,12 +12,12 @@ var conf = {
         formatBtn0: {
 			isMain: true,
             type: 'button',
-            defaultValue: 'hasAttr(test,type)',
+            defaultValue: 'hasAttr(test,size)',
             depend: [],
             event: {
                 eventName: 'onclick',
                 handler: function(){
-					baidu.dom.g("resultTextarea").innerHTML='查询一个元素是否包含指定的属性：'+baidu.dom.hasAttr("test","type")+"<br>";
+					baidu.dom.g("resultTextarea").innerHTML='查询一个元素是否包含指定的属性：'+baidu.dom.hasAttr(baidu.dom.g("test"),"size")+"<br>";
                 }
             }
         },
@@ -28,7 +28,7 @@ var conf = {
             event: {
                 eventName: 'onclick',
                 handler: function(){
-					baidu.dom.g("resultTextarea").innerHTML='查询一个元素是否包含指定的属性：'+baidu.dom.hasAttr("test","disabled")+"<br>";
+					baidu.dom.g("resultTextarea").innerHTML='查询一个元素是否包含指定的属性：'+baidu.dom.hasAttr(baidu.dom.g("test"),"disabled")+"<br>";
                 }
             }
         }
