@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.setStyles'}],
     'default': {
         pageConf: {
-            html: '<div class="contain" id="target"><div id="single" class="big">测试元素</div><div class="big">对比元素</div></div>',
+            html: '<div class="contain" id="target"><div id="single" class="big">测试元素</div><div class="big">对比元素</div></div>'
 		},
         formatBtn: {
 			isMain: true,

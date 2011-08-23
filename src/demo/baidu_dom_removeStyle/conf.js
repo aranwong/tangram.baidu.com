@@ -12,7 +12,7 @@ var conf = {
         formatBtn0: {
 			isMain: true,
             type: 'button',
-            defaultValue: '祛除背景',
+            defaultValue: '去除背景',
             depend: [],
             event: {
                 eventName: 'onclick',

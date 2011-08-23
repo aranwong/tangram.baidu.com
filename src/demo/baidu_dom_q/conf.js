@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.q'}],
     'default': {
         pageConf: {
-            html: '<div id="test"><span class="red">测试元素</span><span class="blue">测试元素</span><span class="black">测试元素</span></div>',
+            html: '<div id="test"><span class="red">测试元素</span><span class="blue">测试元素</span><span class="black">测试元素</span></div>'
 		},
         formatBtn: {
 			isMain: true,

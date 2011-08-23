@@ -28,6 +28,7 @@ var conf = {
 		onrelease:{type:'text',size:15,label:'<p>释放：',defaultValue:'function(){ alert(\'when release\') }'},
 		
         fixable: {
+			isMain: true,
             type: 'button',
             defaultValue: '设置',
 			isMain:true,
@@ -58,7 +59,7 @@ var conf = {
 					this.fixableDemo.release();
 				}
 			}
-		},
+		}/*,
 		
 		newKey:{
 			type: 'select',
@@ -87,7 +88,7 @@ var conf = {
 					this.fixableDemo.update(opt)
 				}
 			}
-		}
+		}*/
 		
         
 		

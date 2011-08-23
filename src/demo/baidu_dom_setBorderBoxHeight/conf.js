@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'setBorderBoxHeight'}],
     'default': {
         pageConf: {
-            html: '<div class="contain" id="target"></div>',
+            html: '<div class="contain" id="target"></div>'
 		},
         param0: {
             type: 'text',
