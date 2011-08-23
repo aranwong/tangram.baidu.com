@@ -64,7 +64,11 @@ class MergeSource {
             
 			#	选择了NO UI BASE的处理
 			if ( $this->nouibase && preg_match ("/(baidu\/)(ui)\/(base|createUI)(.*)/i", $module) ){
-				 return "/* UI BASE: $module */";
+				 return "/* IGNOR UI BASE: $module */";
+			}
+
+			if ( $this->nobase && !preg_match ("/(baidu\/)(ui|fx|widget|data|i18n|tools)(.*)/i", $module) ){
+				 return "/* IGNOR BASE: $module */";
 			}
 
             $realpath = $this->filePathJoin(MY_DIR, $this->version.'/src',$module);
@@ -80,8 +84,7 @@ class MergeSource {
 			}
 			#	还是找不到文件的话就 返回错误信息；
 			 if ( !file_exists($realpath)) {
-					//return "//NOT found $module \n";
-					return "//NOT found $realpath \n";
+					return "//NOT found $module \n";
 			}
             
             return $this->mergeFile($realpath);            
