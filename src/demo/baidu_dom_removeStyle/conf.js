@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.removeStyle'}],
     'default': {
         pageConf: {
-            html: '<div id="resultTextarea"></div><div id="target" style="background:red"></div>'
+            html: '<div id="resultTextarea"></div><div id="target" style="background-color:red"></div>'
 		},
         formatBtn0: {
 			isMain: true,
@@ -17,7 +17,7 @@ var conf = {
             event: {
                 eventName: 'onclick',
                 handler: function(){
-					baidu.dom.removeStyle("target","background");
+					baidu.dom.removeStyle("target","background-color");
                 }
             }
         }

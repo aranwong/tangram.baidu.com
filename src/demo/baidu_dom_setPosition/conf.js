@@ -18,9 +18,9 @@ var conf = {
         },
         param1: {
             type: 'text',
-			label: 'left:',
+			label: '<br>left:',
             defaultValue: '100',
-            size: 9,
+            size: 11,
             maxlength: 80
         },
         formatBtn: {
