@@ -16,7 +16,7 @@ var conf = {
             size: 11
         },
         dateInput2: {
-        	label: '高：',
+        	label: '<br>高：',
             type: 'text',
             defaultValue: "200",
             size: 11

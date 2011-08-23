@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.ready'}],
     'default': {
         pageConf: {
-            html: '<div id="test">下面是即将加载的页面<br><iframe width="300px" height="100px" name="fname1" id="fid1"></div>'
+            html: '<div id="test">下面是即将加载的页面<br><iframe width="300px" height="100px" name="fname1" id="fid1"></iframe></div>'
 		},
         formatBtn: {
 			isMain: true,

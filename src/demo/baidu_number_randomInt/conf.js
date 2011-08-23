@@ -18,7 +18,7 @@ var conf = {
         },
         param1: {
             type: 'text',
-			label: '最大值：',
+			label: '<br>最大值：',
             defaultValue: '20',
             size: 9,
             maxlength: 80
