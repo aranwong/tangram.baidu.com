@@ -28,8 +28,10 @@ var conf = {
 		onrelease:{type:'text',size:15,label:'<p>释放：',defaultValue:'function(){ alert(\'when release\') }'},
 		
         fixable: {
+			isMain: true,
             type: 'button',
             defaultValue: '设置',
+			isMain:true,
 			depend:  ['vertival','horizontal','offset','autofix','onrender','onupdate','onrelease'],
             event: {
                 eventName: 'onclick',
@@ -43,7 +45,6 @@ var conf = {
 					if(typeof eval('('+onrender+')') == 'function')	{opt.onrender=eval('('+onrender+')');}
 					if(typeof eval('('+onupdate+')') == 'function')	{opt.onrelease=eval('('+onupdate+')');}
 					if(typeof eval('('+onrelease+')') == 'function')	{opt.onrelease=eval('('+onrelease+')');}
-					console.log(opt)
 					
 					this.fixableDemo = baidu.dom.fixable('testDiv',opt);
 				}
@@ -58,7 +59,7 @@ var conf = {
 					this.fixableDemo.release();
 				}
 			}
-		},
+		}/*,
 		
 		newKey:{
 			type: 'select',
@@ -83,11 +84,11 @@ var conf = {
 						var s = eval('s = '+v);
 						if(typeof s=='function' || typeof s=='boolean' || typeof s=='object'){opt[k]=s};
 					}catch(e){}
-					console.log(opt)
+					
 					this.fixableDemo.update(opt)
 				}
 			}
-		}
+		}*/
 		
         
 		
@@ -95,7 +96,7 @@ var conf = {
     groups: {
         'default': [
            ['vertival','horizontal','offset','autofix','onrender','onupdate','onrelease'],
-           ['fixable','release'],
+           ['fixable','release']
            //['newKey','newVal','newBtn']
 
         ]

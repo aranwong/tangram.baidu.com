@@ -3,7 +3,8 @@ var conf = {
     //    class|method|field
     clazz: {
         type: 'method',
-        'method': 'baidu.dom.getComputedStyle'
+        'method': 'baidu.dom.getComputedStyle',
+		dependPackages: ['baidu.dom._styleFilter.px']
     },
     //    定义DEMO可选项
     demoType: [
@@ -23,13 +24,14 @@ var conf = {
 			type:'text',size:21,defaultValue:'width'
 		},
 		getComputedStyle:{
+			isMain: true,
 			type:'button',
 			defaultValue: '获得样式',
             depend: ['style'],
 			event: {
 				eventName: 'onclick',
 				handler: function(arg){
-					alert(baidu.dom.getComputedStyle('testDiv',arg))
+					alert(baidu.dom.getComputedStyle('testDiv',arg));
 				}
 			}
 		}

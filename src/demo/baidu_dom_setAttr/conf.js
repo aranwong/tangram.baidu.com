@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.setAttr'}],
     'default': {
         pageConf: {
-            html: '<input id="test" type="text" size="20" value="被设置的元素" >',
+            html: '<input id="test" type="text" size="20" value="被设置的元素" >'
 		},
         param0: {
             type: 'text',

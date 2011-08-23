@@ -1,7 +1,7 @@
 var conf = {
     clazz: {
         type: 'method',
-        'method': 'baidu.lang.removeEventListener'
+        'method': 'baidu.lang.eventCenter.removeEventListener'
     },
     
     demoType: [{key: 'default', val: 'removeEventListener'}],

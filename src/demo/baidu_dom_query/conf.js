@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.query'}],
     'default': {
         pageConf: {
-            html: '<table id="demo"><tr><td><a href="http://tangram.baidu.com">tangram</a></td></tr><tr><td><input type="text" disabled="disabled" /></td></tr><tr><td><input type="text" /></td></tr><tr><td><a href="#">FE</a></td></tr><tr><td><p class="bold">测试元素1</p></td></tr><tr><td><p>测试元素2</p></td></tr></table>',
+            html: '<table id="demo"><tr><td><a href="http://tangram.baidu.com">tangram</a></td></tr><tr><td><input type="text" disabled="disabled" /></td></tr><tr><td><input type="text" /></td></tr><tr><td><a href="#">FE</a></td></tr><tr><td><p class="bold">测试元素1</p></td></tr><tr><td><p>测试元素2</p></td></tr></table>'
 		},
         formatBtn0: {
 			isMain: true,

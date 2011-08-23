@@ -7,8 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.ready'}],
     'default': {
         pageConf: {
-            html: '<div id="test">页面加载中...</div>',
-			jsCode: 'baidu.dom.ready(function(){baidu.dom.g("test").innerHTML = "页面加载完毕!";})'
+            html: '<div id="test">下面是即将加载的页面<br><iframe width="300px" height="100px" name="fname1" id="fid1"></div>'
 		},
         formatBtn: {
 			isMain: true,
@@ -18,9 +17,7 @@ var conf = {
             event: {
                 eventName: 'onclick',
                 handler: function(){
-					    baidu.dom.ready(function(){
-							baidu.dom.g("test").innerHTML = "页面加载完毕!";
-						})
+						baidu.dom.ready(function(){baidu.dom.setAttr(baidu.dom.g("fid1"), 'src', 'pageReadyDemo.html')});
                 }
             }
         }

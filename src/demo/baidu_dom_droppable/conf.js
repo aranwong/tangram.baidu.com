@@ -1,10 +1,10 @@
 var conf = {
     clazz: {
         type: 'method',
-        'method': 'baidu.dom.drag'
+        'method': 'baidu.dom.droppable'
     },
     
-    demoType: [{key: 'default', val: 'baidu.dom.drag'}],
+    demoType: [{key: 'default', val: 'baidu.dom.droppable'}],
     'default': {
         pageConf: {
             html: '<div id="target"></div><div id="drag" class="roundCorner"><div id="title" class="roundCorner">单击此处进行拖拽</div></div>'
