@@ -200,6 +200,8 @@ module.declare(function(require, exports, module){
 
 		setJump(data, key);
 		E("api_demo_iframe").attr("src", "demo/demo-console.html?package=" + key);
+
+		page.statSend({ name: "pv", key: key });
 	}
 
 	function loadAPIList(key){
