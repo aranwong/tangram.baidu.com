@@ -19,7 +19,7 @@ var conf = {
 			'var options = {'+
 				'uploadURL: "images/getfileAvatar.php",'+
 				'tipHandle: function(tip){alert(tip);},'+
-				'uploadCallBack: function(){console.log(arguments);},'+
+				'uploadCallBack: function(){alert("ok");},'+
 				'createOptions:{'+
 					'id: "flashID",url: "images/avatarMaker.swf",width: "630px",height: "360px",container: "content"'+
 				'}'+
