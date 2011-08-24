@@ -7,7 +7,7 @@ var conf = {
     demoType: [{key: 'default', val: 'stopPropagation'}],
     'default': {
         pageConf: {
-            html: '<div id="outer_box"><a id="mylink" href="http://www.baidu.com" target="_blank">百度一下，你就知道...</a></div><div id="resultArea"></div>'
+            html: '<div id="outer_box"><button id="mylink">百度一下，你就知道</button></div><div id="resultArea"></div>'
         },
         btn1: {
             type: 'button',
@@ -21,7 +21,7 @@ var conf = {
 					});
 					baidu.event.on("mylink", "click", function(e){
 						baidu.event.stopPropagation(e);
-						T.g('resultArea').innerHTML += "您点击了链接，事件冒泡已被阻止<br />";
+						T.g('resultArea').innerHTML += "您点击了按钮，事件冒泡已被阻止<br />";
 					});
             	}
             }
