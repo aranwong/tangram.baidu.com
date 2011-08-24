@@ -7,7 +7,8 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.draggable'}],
     'default': {
         pageConf: {
-            html: '<div id="dragRegion"><div id="drag" class="roundCorner"><div id="title" class="roundCorner">我已支持拖曳，并且设置了范围</div></div></div>'
+            html: '<div id="dragRegion"><div id="drag" class="roundCorner"><div id="title" class="roundCorner">我已支持拖曳，并且设置了范围</div></div></div>',
+			jsCode: 'var eventOn = 0;'
 		},
         formatBtn0: {
 			isMain: true,
@@ -17,7 +18,10 @@ var conf = {
             event: {
                 eventName: 'onclick',
                 handler: function(){
-					baidu.dom.draggable("drag", {range: [2,398,398,2], handler: T.g("title")});
+					if(eventOn != 1){
+						baidu.dom.draggable("drag", {range: [2,398,398,2], handler: T.g("title")});
+						eventOn = 1;
+					}
                 }
             }
         }
@@ -27,3 +31,7 @@ var conf = {
         'default': [['formatBtn0']]
     }
 };
+
+document.onselectstart = function(){
+	return false;
+}

@@ -7,7 +7,8 @@ var conf = {
     demoType: [{key: 'default', val: 'baidu.dom.drag'}],
     'default': {
         pageConf: {
-            html: '<div id="drag" class="roundCorner"><div id="dragHeader" class="roundCorner"></div><div id="dragContent">单击色条后开始拖拽</div></div>'
+            html: '<div id="drag" class="roundCorner"><div id="dragHeader" class="roundCorner"></div><div id="dragContent">单击色条后开始拖拽</div></div>',
+			jsCode: 'var eventOn = 0;'
 		},
         formatBtn0: {
 			isMain: true,
@@ -38,11 +39,14 @@ var conf = {
 							dragging = false;
 						}
 					};
-					T.event.on(document, "click", function(e){
-						if(T.event.getTarget(e).id == "dragHeader"){
-							startDrag();
-						}
-					});
+					if(eventOn != 1){
+						T.event.on(document, "click", function(e){
+							if(T.event.getTarget(e).id == "dragHeader"){
+								startDrag();
+							}
+						});
+						eventOn = 1;
+					}
                 }
             }
         }
