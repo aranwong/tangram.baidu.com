@@ -79,8 +79,8 @@ class MergeSource {
             
         	#	如果文件不存在 并且 允许了 Base 选项，则从附属库中去查找
             if ( !file_exists($realpath) && !$this->nobase ) {
-					//$realpath = $this->filePathJoin(MY_DIR, $_REQUEST['slavelib'].'/src', $module);
-					$realpath = $this->filePathJoin(MY_DIR, 'Tangram-base'.'/src', $module);
+					$realpath = $this->filePathJoin(MY_DIR, $_REQUEST['slavelib'].'/src', $module);
+					//$realpath = $this->filePathJoin(MY_DIR, 'Tangram-base'.'/src', $module);
 			}
 			#	还是找不到文件的话就 返回错误信息；
 			 if ( !file_exists($realpath)) {
@@ -98,7 +98,8 @@ class MergeSource {
 		$pathstr = implode('/',$patharr).'.js';
 		
 		if( count($patharr)<2 ){
-			return "//NOT found $path \n";
+			//return "//NOT found $path \n";
+			return "//NOT found \n";
 		}
 		$realpath = $this->filePathJoin(MY_DIR, $this->version, $pathstr);
 

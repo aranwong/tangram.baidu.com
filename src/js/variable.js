@@ -6,6 +6,10 @@ module.declare(function(require, exports, module){
 	var variableElements = Q(".variable").map(function(dom){
 		return E(dom);
 	});
+	var variableLink = Q(".variable-attr-href").map(function(dom){
+		return E(dom);
+	});
+	
 
 	variableElements.forEach(function(el){
 		var name = el.attr("name");
@@ -20,5 +24,10 @@ module.declare(function(require, exports, module){
 				el.html(conf[name].toString());
 				break;
 		}
+	});
+	
+	variableLink.forEach(function(el){
+	    var href = el.attr("href");
+	    el.attr("href", href.format(conf));
 	});
 });
