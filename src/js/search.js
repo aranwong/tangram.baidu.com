@@ -128,22 +128,6 @@ module.declare(function(require, exports, module){
 			var baseApiUrl = "./js/tangram_base_api.js?t=" + timestamp,//添加时间戳，否则IE读取缓存数据，不能触发加载成功的事件
 				componentApiUrl = "./js/tangram_component_api.js?t=" + timestamp,
 				apiData = {
-					'mobile web 的未来' :{'name':'', 'desc':'', 'link':''},
-					'需要 jquery 吗' :{'name':'', 'desc':'', 'link':''},
-					'链式调用' :{'name':'', 'desc':'', 'link':''},
-					'常用技巧' :{'name':'', 'desc':'', 'link':''},
-					'移动浏览器的 viewport' :{'name':'', 'desc':'', 'link':''},
-					'iframe 的问题' :{'name':'', 'desc':'', 'link':''},
-					'基础方法' :{'name':'', 'desc':'', 'link':''},
-					'UI 组件' :{'name':'', 'desc':'', 'link':''},
-					'事件处理(一)' :{'name':'', 'desc':'', 'link':''},
-					'事件处理(二)' :{'name':'', 'desc':'', 'link':''},
-					'事件处理(三)' :{'name':'', 'desc':'', 'link':''},
-					'动画效果(一)' :{'name':'', 'desc':'', 'link':''},
-					'动画效果(二)' :{'name':'', 'desc':'', 'link':''},
-					'离线存储(一)' :{'name':'', 'desc':'', 'link':''},
-					'离线存储(二)' :{'name':'', 'desc':'', 'link':''},
-					'本地存储' :{'name':'', 'desc':'', 'link':''},
 					'base入门' :{'name':'', 'desc':'', 'link':'./docs/Tangram-Base.html'},
 					'component入门' :{'name':'', 'desc':'', 'link':'./docs/Tangram-Component.html'},
 					'UI使用指导' :{'name':'', 'desc':'', 'link':'./docs/Tangram-UI.html'},
@@ -152,11 +136,11 @@ module.declare(function(require, exports, module){
 					'UI组件开发' :{'name':'', 'desc':'', 'link':'./docs/Tangram-Component-Colligate.html'},
 					'Component插件' :{'name':'', 'desc':'', 'link':'./docs/Tangram-Component-Plugins.html'},
 					'behavior' :{'name':'', 'desc':'', 'link':'./docs/Tangram-Component-Behavior.html'},
-					'base入门' :{'name':'', 'desc':'', 'link':''},
-					'新手入门' :{'name':'', 'desc':'', 'link':''},
-					'快捷方式' :{'name':'', 'desc':'', 'link':''},
-					'API参考手册' :{'name':'', 'desc':'', 'link':''},
-					"“荔枝”来了！新官网有木有？":{'name':'', 'desc':'', 'link':''}
+					'base入门' :{'name':'', 'desc':'', 'link':'docs/Tangram-Base.html'},
+					'新手入门' :{'name':'', 'desc':'', 'link':'docs/tutorial.html'},
+					'快捷方式' :{'name':'', 'desc':'', 'link':'docs/short.html'},
+					'API参考手册' :{'name':'', 'desc':'', 'link':'api.html'},
+					"“荔枝”来了！新官网有木有？":{'name':'', 'desc':'', 'link':'docs/lichee.html'}
 				},
 				apiLoaded = 0;
 

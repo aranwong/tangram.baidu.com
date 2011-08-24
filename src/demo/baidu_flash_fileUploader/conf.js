@@ -20,9 +20,9 @@ var conf = {
 				'width: "100px",height: "100px",'+
 				'selectiFile:function(f){var fs=f,fl=fs.length,html=[];for(var i=0;i<fl;i++){var c= fs[i];'+
 					'html[html.length]="<p>["+c.index+"] name:"+c.name+" size:"+c.size+"</p>"'+
-				'}baidu.dom.g("info").innerHTML += html.join("");console.log(html)},'+
+				'}baidu.dom.g("info").innerHTML += html.join("");},'+
 				'createOptions:{'+
-					'id: "flashID",url: "images/fileUpLoader.swf",width: "100px",height: "100px",container: "content"'+
+					'id: "flashID",url: "images/fileUploader.swf",width: "100px",height: "100px",container: "content"'+
 				'},'+
 				'uploadComplete:function(){alert("上传完毕!")}'+
 			'};'+

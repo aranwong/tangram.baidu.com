@@ -89,6 +89,7 @@ module.declare(function(require, exports, module){
 		form.src.value = getCheckedNode();
         document.myform.submit();
     }
+    
 
 	function buildText(){
 		currentInfo.setValue("生成中...");
@@ -343,6 +344,8 @@ module.declare(function(require, exports, module){
 		});
 
 		treeInstance.render();
+		
+		resetButton();
 
 	}
 });
