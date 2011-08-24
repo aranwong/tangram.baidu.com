@@ -23,7 +23,7 @@ var conf = {
 				key: ['1', '2'],
 				val: ['disable', 'enable']
 			},
-            defaultValue: '1',
+            defaultValue: '1'
         },
         formatBtn: {
 			isMain: true,
@@ -35,8 +35,8 @@ var conf = {
                 handler: function(arg0, arg1){
 					var disableValue = (arg1[0] == '1') ? 'disabled' : 'false';
 					if(arg1[0] == '2'){
-						baidu.dom.g("test").removeAttribute("disabled");
 						baidu.dom.setAttrs("test", {size:arg0});
+						baidu.dom.g("test").removeAttribute("disabled");
 					}
 					else baidu.dom.setAttrs("test", {size:arg0,disabled:disableValue});
                 }
