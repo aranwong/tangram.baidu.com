@@ -119,10 +119,13 @@ $nobase = !isset($_REQUEST["nobase"]) || strtolower($_REQUEST["nobase"]) == "fal
 $nouibase = !isset($_REQUEST["nouibase"]) || strtolower($_REQUEST["nouibase"]) == "false" ? false : true;
 //压缩类型  yui  mini  pack  其他值为不压缩
 $compress = $_REQUEST["compress"];
-//是否导出资源包
-$isResource = $_REQUEST["resource"]?1:0;
+
 //是否查看源代码
 $viewSource = $_REQUEST["viewSource"]-0 ? true :false ; 
+
+//是否导出资源包，如果查看源代码模式打开则此项默认为0
+$isResource = $_REQUEST["resource"] && !$viewSource ?1:0;
+
 
 // 1.获取源代码
 // 2.带有资源文件信息的数组（如果isResource）
